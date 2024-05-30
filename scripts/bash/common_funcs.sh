@@ -28,6 +28,10 @@ function docker_container_exists {
 
 }
 
+function port_is_in_use {
+    if sudo lsof -Pi :$1 -sTCP:LISTEN -t >/dev/null; then return 0; else return 1; fi
+}
+
 function confirm_prompt {
   prompt=$1
   while true; do
