@@ -9,6 +9,10 @@ base structure for SolidPy python submodules
 - pre-populated dependencies in the toml's `dependencies` section
 - various git/flake files and preset settings in the toml's `tool` section
 
+# Dependencies
+- __SolidPy-Domain__ - domain submodule for SolidPy
+  - Make sure you edit `pyproject.toml` and confirm the correct version of the domain submodule is being used.
+
 # Basic Setup and Usage
 - Configure Poetry Auth to use GCP Artifact Registry:
 - `$ poetry config http-basic.pypi-gcp oauth2accesstoken $(gcloud auth print-access-token)`
