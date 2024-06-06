@@ -1,22 +1,17 @@
-# Search and replace the following variables with the appropriate values:
-# *APP_NAME*                :   ex: solidpy_domain
-# *SUBMODULE_TYPE*          :   ex: Domain
-# *COMMON_CORE_VERSION*     :   ex: 0.1.0
-
+[build-system]
+requires = [ "poetry-core",]
+build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "solidpy_database"
-version = "0.0.1"
+version = "0.1.0"
 description = "Base Template for SolidPy.Database"
-authors = ["Craig Holland <craig_holland@hotmail.com>"]
+authors = [ "Craig Holland <craig_holland@hotmail.com>",]
 readme = "README.md"
-
-
 [[tool.poetry.source]]
 name = "pypi-gcp"
 url = "https://us-west1-python.pkg.dev/cholland-form/pypi-gcp/simple"
-priority = 'supplemental'
-
+priority = "supplemental"
 
 [tool.black]
 line-length = 79
@@ -29,10 +24,6 @@ profile = "black"
 line_length = 79
 skip_gitignore = true
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
 [tool.poetry.dependencies]
 python = "^3.12"
 toml = "^0.10.2"
@@ -43,12 +34,15 @@ pytest = "^8.2.0"
 tox = "^4.15.0"
 pre-commit = "^3.7.1"
 pycparser = "2.22"
-common-core = {version = ">=0.4.0", source = "pypi-gcp"}
 alembic = "^1.13.1"
 psycopg2-binary = "^2.9.9"
 sqlalchemy-utils = "^0.41.2"
 sqla-wrapper = "^6.0.0"
 alembic-utils = "^0.8.3"
+
+[tool.poetry.dependencies.common-core]
+version = ">=0.4.0"
+source = "pypi-gcp"
 
 [tool.poetry.dependencies.solidpy-domain]
 version = ">=0.1.0"
